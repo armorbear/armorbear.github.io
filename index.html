@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adam Pickens | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+}
+
+/* RED ACCENT SYSTEM */
+:root {
+    --accent: #ef4444; /* red */
+    --accent2: #f87171;
+}
+
+/* HERO */
+.hero {
+    height: auto;
+    padding: 2rem 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(-45deg, #ef4444, #3498db, #9b59b6, #111827);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+.hero h1 {
+    font-size: 2rem;
+    animation: bounceIn 1s ease;
+}
+
+.hero p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    animation: fadeIn 1.2s ease;
+}
+
+/* NAV */
+nav {
+    position: sticky;
+    top: 0;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+nav a {
+    margin: 0 1rem;
+    color: #e2e8f0;
+    text-decoration: none;
+    position: relative;
+    transition: 0.3s;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -4px;
+    background: var(--accent);
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* SECTIONS */
+section {
+    padding: 4rem 1rem;
+    max-width: 1000px;
+    margin: auto;
+}
+
+h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    border-left: 4px solid var(--accent);
+    padding-left: 10px;
+}
+
+/* PROJECTS */
+.project {
+    background: #1e293b;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(239, 68, 68, 0.1);
+}
+
+.project:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 0 25px rgba(239,68,68,0.35);
+}
+
+/* SKILLS */
+.skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+}
+
+.skill {
+    background: #1e293b;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid rgba(239, 68, 68, 0.15);
+}
+
+.skill:hover {
+    background: var(--accent);
+    color: black;
+    transform: translateY(-6px) scale(1.08);
+    box-shadow: 0 0 18px rgba(239,68,68,0.5);
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    margin-top: 1rem;
+    background: var(--accent);
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--accent2);
+    transform: translateY(-4px);
+    box-shadow: 0 0 15px rgba(239,68,68,0.6);
+}
+
+/* TIMELINE */
+.timeline {
+    border-left: 2px solid var(--accent);
+    padding-left: 1rem;
+}
+
+.timeline div {
+    margin-bottom: 1.5rem;
+    transition: 0.3s;
+}
+
+.timeline div:hover {
+    transform: translateX(6px);
+    color: var(--accent);
+}
+
+/* CONTACT */
+#contact p:hover {
+    color: var(--accent);
+    cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #020617;
+}
+
+/* ANIMATIONS */
+.fade {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* BOUNCE ANIMATIONS */
+@keyframes bounceIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    60% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+    <div>
+        <h1>Adam Pickens</h1>
+        <p>Aspiring Software Developer</p>
+    </div>
+</div>
+
+<!-- NAV -->
+<nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<!-- ABOUT -->
+<section id="about" class="fade">
+    <h2>About Me</h2>
+    <p>
+        I'm a developer who enjoys building real-world applications and learning modern technologies.
+        I like clean design, smooth UI, and making things work efficiently.
+    </p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="fade">
+    <h2>Skills</h2>
+    <div class="skills">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">SQL</div>
+        <div class="skill">Git</div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="fade">
+    <h2>Projects</h2>
+
+    <div class="project">
+        <h3>Animal Database</h3>
+        <p>CRUD web app for managing animal records.</p>
+        <a href="#" class="btn">View Project</a>
+    </div>
+
+    <div class="project">
+        <h3>Portfolio Website</h3>
+        <p>This responsive site with animations and modern UI.</p>
+        <a href="#" class="btn">View Project</a>
+    </div>
+
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="fade">
+    <h2>Education</h2>
+    <div class="timeline">
+        <div>
+            <h3>High School Diploma</h3>
+            <p>Graduating ----</p>
+        </div>
+        <div>
+            <h3>Self-Taught Developer</h3>
+            <p>Web development & backend basics</p>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="fade">
+    <h2>Contact</h2>
+    <p>Email: Adam@pickens.dev</p>
+    <p>GitHub: github.com/armorbear</p>
+</section>
+
+<!-- SCRIPT -->
+<script>
+const faders = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+    faders.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+            el.classList.add('show');
+        }
+    });
+});
+</script>
+
+</body>
+</html>
