@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+
 * {
     margin: 0;
     padding: 0;
@@ -21,9 +22,9 @@ body {
     color: #e2e8f0;
 }
 
-/* RED ACCENT SYSTEM */
+/* COLORS */
 :root {
-    --accent: #ef4444; /* red */
+    --accent: #ef4444;
     --accent2: #f87171;
 }
 
@@ -36,7 +37,12 @@ body {
     justify-content: center;
     align-items: center;
 
-    background: linear-gradient(-45deg, #ef4444, #3498db, #9b59b6, #111827);
+    background: linear-gradient(-45deg,
+        #ef4444,
+        #3498db,
+        #9b59b6,
+        #111827);
+
     background-size: 400% 400%;
     animation: gradientMove 10s ease infinite;
 }
@@ -48,24 +54,28 @@ body {
 }
 
 .hero h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     animation: bounceIn 1s ease;
 }
 
 .hero p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     opacity: 0.9;
     animation: fadeIn 1.2s ease;
 }
 
-/* NAV */
+/* NAVBAR */
 nav {
     position: sticky;
     top: 0;
+    z-index: 1000;
+
     background: rgba(15, 23, 42, 0.85);
     backdrop-filter: blur(10px);
+
     padding: 1rem;
     text-align: center;
+
     border-bottom: 1px solid rgba(239, 68, 68, 0.2);
 }
 
@@ -110,61 +120,95 @@ h2 {
     padding-left: 10px;
 }
 
-/* PROJECTS */
+/* PROJECT CARDS */
 .project {
     background: #1e293b;
     padding: 1.5rem;
     border-radius: 12px;
     margin-bottom: 1.5rem;
+
     transition: all 0.3s ease;
+
     border: 1px solid rgba(239, 68, 68, 0.1);
 }
 
 .project:hover {
     transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 0 25px rgba(239,68,68,0.35);
+
+    box-shadow:
+        0 0 25px rgba(239,68,68,0.35);
+}
+
+.project h3 {
+    margin-bottom: 0.8rem;
+}
+
+.project p {
+    margin-bottom: 1rem;
 }
 
 /* SKILLS */
 .skills {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns:
+        repeat(auto-fit, minmax(120px, 1fr));
+
     gap: 1rem;
 }
 
 .skill {
     background: #1e293b;
+
     padding: 1rem;
+
     text-align: center;
+
     border-radius: 10px;
+
     transition: all 0.3s ease;
+
     cursor: pointer;
+
     border: 1px solid rgba(239, 68, 68, 0.15);
 }
 
 .skill:hover {
     background: var(--accent);
+
     color: black;
+
     transform: translateY(-6px) scale(1.08);
-    box-shadow: 0 0 18px rgba(239,68,68,0.5);
+
+    box-shadow:
+        0 0 18px rgba(239,68,68,0.5);
 }
 
 /* BUTTONS */
 .btn {
     display: inline-block;
+
     padding: 0.5rem 1.2rem;
+
     margin-top: 1rem;
+
     background: var(--accent);
+
     color: white;
+
     border-radius: 6px;
+
     text-decoration: none;
+
     transition: all 0.3s ease;
 }
 
 .btn:hover {
     background: var(--accent2);
+
     transform: translateY(-4px);
-    box-shadow: 0 0 15px rgba(239,68,68,0.6);
+
+    box-shadow:
+        0 0 15px rgba(239,68,68,0.6);
 }
 
 /* TIMELINE */
@@ -184,9 +228,14 @@ h2 {
 }
 
 /* CONTACT */
-#contact p:hover {
+#contact p:hover,
+#contact a:hover {
     color: var(--accent);
-    cursor: pointer;
+}
+
+#contact a {
+    color: #e2e8f0;
+    text-decoration: none;
 }
 
 /* FOOTER */
@@ -196,7 +245,7 @@ footer {
     background: #020617;
 }
 
-/* ANIMATIONS */
+/* FADE ANIMATION */
 .fade {
     opacity: 0;
     transform: translateY(20px);
@@ -208,17 +257,37 @@ footer {
     transform: translateY(0);
 }
 
-/* BOUNCE ANIMATIONS */
+/* KEYFRAMES */
 @keyframes bounceIn {
-    0% { transform: scale(0.8); opacity: 0; }
-    60% { transform: scale(1.05); opacity: 1; }
-    100% { transform: scale(1); }
+
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    60% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
+
 </style>
 </head>
 
@@ -243,81 +312,184 @@ footer {
 
 <!-- ABOUT -->
 <section id="about" class="fade">
+
     <h2>About Me</h2>
+
     <p>
-        I'm a developer who enjoys building real-world applications and learning modern technologies.
-        I like clean design, smooth UI, and making things work efficiently.
+        I'm a developer who enjoys building real-world applications
+        and learning modern technologies.
+
+        I like clean design, smooth UI,
+        and making things work efficiently.
     </p>
+
 </section>
 
 <!-- SKILLS -->
 <section id="skills" class="fade">
+
     <h2>Skills</h2>
+
     <div class="skills">
+
         <div class="skill">HTML</div>
         <div class="skill">CSS</div>
         <div class="skill">JavaScript</div>
         <div class="skill">SQL</div>
         <div class="skill">Git</div>
+
     </div>
+
 </section>
 
 <!-- PROJECTS -->
 <section id="projects" class="fade">
+
     <h2>Projects</h2>
 
+    <!-- ANIMAL DATABASE -->
     <div class="project">
+
         <h3>Animal Database</h3>
-        <p>CRUD web app for managing animal records.</p>
-        <a href="https://github.com/armorbear/animal" class="btn">View Project</a>
+
+        <p>
+            CRUD web application for managing
+            animal records.
+        </p>
+
+        <a href="https://github.com/armorbear/animal"
+           target="_blank"
+           class="btn">
+
+           View Project
+
+        </a>
+
     </div>
 
+    <!-- PORTFOLIO -->
     <div class="project">
+
         <h3>Portfolio Website</h3>
-        <p>This responsive site with animations and modern UI.</p>
-        <a href="#" class="btn">View Project</a>
+
+        <p>
+            Responsive portfolio site with animations,
+            smooth scrolling, and modern UI design.
+        </p>
+
+        <a href="#"
+           class="btn">
+
+           View Project
+
+        </a>
+
+    </div>
+
+    <!-- WHACK A MOLE -->
+    <div class="project">
+
+        <h3>Whack A Mole</h3>
+
+        <p>
+            Interactive browser game with scoring,
+            combo system, special modes,
+            dynamic grid sizes,
+            pause/play support,
+            and leaderboard functionality.
+        </p>
+
+        <a href="https://github.com/armorbear/whackamole"
+           target="_blank"
+           class="btn">
+
+           View Project
+
+        </a>
+
     </div>
 
 </section>
 
 <!-- EDUCATION -->
 <section id="education" class="fade">
+
     <h2>Education</h2>
+
     <div class="timeline">
+
         <div>
             <h3>High School Diploma</h3>
             <p>Graduating ----</p>
         </div>
-         <div>
-            <h3>Going to go to Collage</h3>
-            <p>Graduating ----</p>
+
+        <div>
+            <h3>Going to College</h3>
+            <p>Future Student</p>
         </div>
+
         <div>
             <h3>Self-Taught & ICode Schools Developer</h3>
-            <p>Web development & backend basics</p>
+            <p>
+                Learning web development,
+                frontend UI,
+                backend basics,
+                and databases.
+            </p>
         </div>
+
     </div>
+
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="fade">
+
     <h2>Contact</h2>
+
     <p>Email: Adam@pickens.dev</p>
-  <a href="https://github.com/armorbear">GitHub: github.com/armorbear</a> 
+
+    <br>
+
+    <a href="https://github.com/armorbear"
+       target="_blank">
+
+       GitHub: github.com/armorbear
+
+    </a>
+
 </section>
+
+<!-- FOOTER -->
+<footer>
+
+  
+
+</footer>
 
 <!-- SCRIPT -->
 <script>
+
 const faders = document.querySelectorAll('.fade');
 
-window.addEventListener('scroll', () => {
+function showOnScroll() {
+
     faders.forEach(el => {
-        const top = el.getBoundingClientRect().top;
+
+        const top =
+            el.getBoundingClientRect().top;
+
         if (top < window.innerHeight - 100) {
+
             el.classList.add('show');
         }
     });
-});
+}
+
+window.addEventListener('scroll', showOnScroll);
+
+showOnScroll();
+
 </script>
 
 </body>
